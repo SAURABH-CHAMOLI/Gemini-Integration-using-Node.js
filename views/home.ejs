@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Askify - Home</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <div class="heading">
+        <h1><i>Askify</i></h1>
+        <h2><i>Answers at Your Fingertips</i></h2>
+    </div>
+
+    <div class="generate">
+        <form method='get' action="/generate" autocomplete="off">
+            <input type="text" name="prompt" placeholder="Enter your prompt here" value="<%= prompt || '' %>">&nbsp;&nbsp;
+            <button type="submit">Generate</button>
+        </form>
+    </div>
+
+    <% if (typeof result !== 'undefined') { %>
+        <div class="result">
+            <h3>Generated Response:</h3>
+            <p><%= result %></p>
+        </div>
+    <% } %>
+
+</body>
+</html>
